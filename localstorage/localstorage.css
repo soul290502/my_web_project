@@ -1,0 +1,61 @@
+#headerWrapper {
+padding: 0px 0px 0px 0px;
+background: url(image/header-wrapper-bg.png);
+}
+#header {
+margin: 0px auto;
+padding: 0px;
+width: 900px;
+text-align: left;
+height: 117px;
+}
+
+body{
+  padding: 1em;
+  font-size: 16px;
+  line-height: 25px;
+}
+input{
+  font-size: 16px;
+}
+input{
+  background-color: red;
+}
+span{
+  background-color: yellow;
+}
+ul{
+  list-style: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding-left: 0;
+}
+
+ul:empty{
+  display: none;
+}
+
+li{
+  border-bottom: 1px solid #ccc;
+}
+
+li:last-child{
+  border-bottom: 0;
+}
+
+/* === javascript styles === */
+
+li input{
+  border: 0;
+  outline: 0;
+  display: none;
+  color: #999;
+}
+
+li.editing input{
+  display: block;
+}
+
+li.editing span{
+  display: hidden;
+}
