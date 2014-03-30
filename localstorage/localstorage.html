@@ -11,17 +11,86 @@
   <link media="all" rel="stylesheet" href="jquery-exercise.css" type="text/css" />
   <link rel="stylesheet" type="text/css" href="..\..\..\jquery-ui-1.10.4.custom\css\ui-lightness\jquery-ui-1.10.4.custom\css\jquery-ui-1.10.4.custom.css">
   <link rel="stylesheet" type="text/css" href="..\..\..\jquery-ui-1.10.4.custom\css\ui-lightness\jquery-ui-1.10.4.custom\css\jquery-ui-1.10.4.custom.min.css">
-	
+
   
 </head>
  <body>
-	<div id="headerWrapper">dsadssadasd</div>
+
+	<div id="headerWrapper">sadsad<img src="images/ui-bg_highlight-soft_100_eeeeee_1x100.png"></div>
   <button type="button" id="add">新增項目</button>
 	<ul></ul>
 	<button type="button" id="clear">刪除local項目</button>
 	<button id="getval">  拿值 </button>
 	<p></p>
 	<div><img src="../image/header-wrapper-bg.png"></div>
+
+<!-- dialog -->
+
+<div id="dialog-form" title="Create new user">
+  <p class="validateTips">All form fields are required.</p>
+ 
+  <form>
+  <fieldset>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" value="" class="text ui-widget-content ui-corner-all">
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all">
+  </fieldset>
+  </form>
+</div>
+ 
+ 
+<div id="users-contain" class="ui-widget">
+  <h1>Existing Users:</h1>
+  <table id="users" class="ui-widget ui-widget-content">
+    <thead>
+      <tr class="ui-widget-header ">
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>john.doe@example.com</td>
+        <td>johndoe1</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button id="create-user">Create new user</button>
+
+<!-- dialog -->
+	<!-- <div class="ui-dialog ui-widget  ui-front ui-dialog-buttons" tabindex="-1" style="height: auto; width: 300px; top: 70.00344848632813px; left: 548.00341796875px; display: block;">
+		<div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+			<span id="ui-id-1" class="ui-dialog-title">
+				&nbsp;
+			</span>
+			<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" aria-disabled="false" title="close">
+				<span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
+				<span class="ui-button-text">close</span>
+			</button>
+		</div>
+		<div id="remove-all-dialog" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; max-height: none; height: auto;">		你確定要刪除所有項目嗎？
+		</div>
+		<div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+			<div class="ui-dialog-buttonset">
+				<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+					<span class="ui-button-text">
+						Yes
+					</span>
+				</button>
+				<button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+					<span class="ui-button-text">
+						Cancel
+					</span>
+				</button>
+			</div>
+		</div>
+	</div> -->
 
 	<!-- <ul id="sortable">
   		<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
@@ -40,7 +109,7 @@
   	<script type="text/javascript" src="jquery-ui-1.10.4.custom.js"></script>
   	<script type="text/javascript" src="localstorage.js"></script>
   	-->
-	
+
 
   <script type="text/javascript" src="..\..\..\jquery-ui-1.10.4.custom\js\jquery-1.10.2.js"></script>
   <script type="text/javascript" src="..\..\..\jquery-ui-1.10.4.custom\js\jquery-ui-1.10.4.custom.min.js"></script>
