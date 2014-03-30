@@ -16,6 +16,8 @@
     return $li;
   };
 
+
+
   if(localStorage.num){
         $.each(JSON.parse(localStorage. num),function(){
           insertaa(this).appendTo($list);
@@ -92,6 +94,14 @@ $list.on('click','.del',function(){  //可以找index
      
 
   });
+
+
+
+  // sortable() function include
+    $(function() {
+      $( "#sortable" ).sortable();
+      $( "#sortable" ).disableSelection();
+    });
 
 }());
 // (function(){
