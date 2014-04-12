@@ -1,20 +1,32 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head >
+ <head >
 
-	<!-- 可以加上網頁小圖示 -->
+	 <!-- 可以加上網頁小圖示 -->
 	<link rel="SHORTCUT ICON" href="../image/p.png">
-	<!-- 可以加上網頁小圖示 -->
+	
 	<meta charset="UTF-8">
-	<title>jQuery 練習</title>
-  <link media="all" rel="stylesheet" href="localstorage.css" type="text/css" />
-  <link media="all" rel="stylesheet" href="jquery-exercise.css" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="..\..\..\jquery-ui-1.10.4.custom\css\ui-lightness\jquery-ui-1.10.4.custom\css\jquery-ui-1.10.4.custom.css">
-  <link rel="stylesheet" type="text/css" href="..\..\..\jquery-ui-1.10.4.custom\css\ui-lightness\jquery-ui-1.10.4.custom\css\jquery-ui-1.10.4.custom.min.css">
+	<title>jQuery 練習</title> 
+   	<link media="all" rel="stylesheet" href="localstorage.css" type="text/css" />
+  	<link media="all" rel="stylesheet" href="jquery-exercise.css" type="text/css" />
+  	<link rel="stylesheet" type="text/css" href="..\..\..\jquery-ui-1.10.4.custom\css\ui-lightness\jquery-ui-1.10.4.custom\css\jquery-ui-1.10.4.custom.css">
+ 	<link rel="stylesheet" type="text/css" href="..\..\..\jquery-ui-1.10.4.custom\css\ui-lightness\jquery-ui-1.10.4.custom\css\jquery-ui-1.10.4.custom.min.css"> 
+
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" /><!-- important to include -->
 
   
-</head>
+  
+</head> 
  <body>
+
+
+
+
+
+
+ 	<!-- <div id="dialog-form" title="Create new user">
+  <p >All form fields are required.</p>
+  </div> -->
 
 	<div id="headerWrapper">sadsad<img src="images/ui-bg_highlight-soft_100_eeeeee_1x100.png"></div>
   <button type="button" id="add">新增項目</button>
@@ -26,23 +38,23 @@
 
 <!-- dialog -->
 
-<div id="dialog-form" title="Create new user">
-  <p class="validateTips">All form fields are required.</p>
+
+
  
-  <form>
-  <fieldset>
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email" value="" class="text ui-widget-content ui-corner-all">
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all">
-  </fieldset>
-  </form>
-</div>
+  <div id="dialog" title="Basic dialog">
+    <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+  </div>
+  
+  <button class="open-dialog">打開 Dialog</button>
+   
+ 
+
+ 
+  
+
  
  
-<div id="users-contain" class="ui-widget">
+<!-- <div id="users-contain" class="ui-widget">
   <h1>Existing Users:</h1>
   <table id="users" class="ui-widget ui-widget-content">
     <thead>
@@ -90,7 +102,7 @@
 				</button>
 			</div>
 		</div>
-	</div> -->
+	</div>  -->
 
 	<!-- <ul id="sortable">
   		<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
@@ -101,8 +113,8 @@
 	  	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
 	 	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
 	</ul> -->
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+<!-- 
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
 	<!--
 	<script type="text/javascript" src="jquery-1.10.2.js"></script>
   	<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
@@ -111,10 +123,10 @@
   	-->
 
 
-  <script type="text/javascript" src="..\..\..\jquery-ui-1.10.4.custom\js\jquery-1.10.2.js"></script>
+   <script type="text/javascript" src="..\..\..\jquery-ui-1.10.4.custom\js\jquery-1.10.2.js"></script>
   <script type="text/javascript" src="..\..\..\jquery-ui-1.10.4.custom\js\jquery-ui-1.10.4.custom.min.js"></script>
-  <script type="text/javascript" src="..\..\..\jquery-ui-1.10.4.custom\js\jquery-ui-1.10.4.custom.js"></script>
-  <script type="text/javascript" src="localstorage.js"></script>
+   <script type="text/javascript" src="..\..\..\jquery-ui-1.10.4.custom\js\jquery-ui-1.10.4.custom.js"></script>
+   <script type="text/javascript" src="localstorage.js"></script>
 
  
 </body> 
