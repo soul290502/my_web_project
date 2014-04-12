@@ -9,19 +9,46 @@ var tmpl = '<li><input type="text"><span></span></li>',
     deleteUl = $('.delete'),          // delete <ul>
     doneUl = $('.done');              // done <ul>
 
+
+    loadLocal();
     $('#add').on('click',function(){
-    	// 	alert("dss");
+
     	$(tmpl).addClass('is-editing').appendTo(mainUl).find('input').focus();
 	});
 
 	$('ul').on('keyup','input',function(e){
 		var input=$(this),
 			li=input.parent('li');
-		// alert(e.which);
-
 		if(e.which===13){
 			li.find('span').text(input.val());
 			li.removeClass('is-editing');
+			save();
 		}
 	});
+
+	
+	mainUl.sortable();
+	mainUl.on('sortstop',function(){
+			save();
+	});
+
+
+
+	function save(){
+		var data=[];
+		$('ul').find('li').each(function(){
+			data.push($(this).find('span').text());
+		});
+		localStorage.list=JSON.stringify(data);
+	}
+
+	function loadLocal(){
+		var arr=JSON.parse(localStorage.list),i;
+		for(i=0;i<arr.length;i++){
+			$(tmpl).appendTo(mainUl).find('span').text(arr[i]);
+		};
+	}
+
 }());
+
+
