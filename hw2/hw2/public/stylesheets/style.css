@@ -98,7 +98,7 @@ ul.delete, ul.done {
   position: fixed;
   width: 15%;
   height: 95%;
-  top: 2.5%;
+  top: 3%;
   -webkit-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 0.1s;
@@ -114,6 +114,10 @@ ul.delete::before, ul.done::before {
   line-height: 1.25em;
 }
 
+
+
+
+
 ul.delete {
   /* styles */
   border: 3px solid black;
@@ -126,7 +130,7 @@ ul.delete {
   border-bottom-right-radius: 10px;
   /* positioning & animation */
   left: -10px;
-  opacity: 0;
+  opacity: 1;
 }
 ul.delete::before {
   /* pseudo element */
@@ -146,7 +150,7 @@ ul.done {
   border-bottom-left-radius: 10px;
   /* positioning & animation */
   right: -10px;
-  opacity: 0;
+  opacity: 1;
 }
 ul.done::before {
   /* pseudo element */

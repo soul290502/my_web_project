@@ -23,14 +23,71 @@ var tmpl = '<li><input type="text"><span></span></li>',
 			li.find('span').text(input.val());
 			li.removeClass('is-editing');
 			save();
-		}
+		}	
 	});
 
-	
-	mainUl.sortable();
-	mainUl.on('sortstop',function(){
+
+	// mainUl.sortable();
+
+	$('#main').sortable({
+		connectWith:'.connected',
+		start:function(){
+			$('#placeholder').addClass('is-dragging');
+		},
+		stop:function(){
+			$('#placeholder').removeClass('is-dragging');
 			save();
+		}
 	});
+	$('#delete').sortable({
+		connectWith:'.connected',
+		receive:function(){
+			// alert('commmmmmmm');
+		}
+	});
+	$('#done').sortable({
+		connectWith:'.connected',
+		receive:function(e,ui){
+			ui.item.addClass('is-done');
+			// alert('commmmmmmm');
+		}
+	});
+	
+
+	// mainUl.on('sort',function(e,ui){
+
+	// 	$('#placeholder').addClass('is-dragging');
+
+	// // 	// $(deleteUl).mouseenter(function(){
+	// // 	// 	$('#placeholder').addClass('is-dragging-enter');
+	// // 	// 	ui.item.addClass('is-done');
+	// // 	// });
+	// // 	// $(deleteUl).mouseout(function(){
+	// // 	// 	$('#placeholder').removeClass('is-dragging-enter');
+	// // 	// });
+	// });
+	
+
+
+		// $(deleteUl).on('sortreceive',function(){
+		// 	alert('hiiiiiiii');
+		// 	ui.item.addClass('is-done');
+		// });
+
+	// mainUl.on('sortstop',function(e,ui){
+
+	// 	// $(deleteUl).on('sortreceive',function(){
+	// 	// 	alert('hiiiiiiii');
+	// 	// 	ui.item.addClass('is-done');
+	// 	// });
+	// 	// if($(deleteUl).mouseenter()){
+	// 	// 	 alert($(deleteUl).mouseenter());
+	// 	// 	// console.log(ui.item);
+	// 	// 	// ui.item.addClass('is-done');
+	// 	// };
+	// 	$('#placeholder').removeClass('is-dragging');
+	// 	save();
+	// });
 
 
 

@@ -5,7 +5,13 @@
 /* ======================================== */
 .is-dragging ul.delete, .is-dragging ul.done {
   opacity: 1;
+  /*z-index: 1;*/
 }
+
+
+/*.is-dragging-enter ul.delete{
+  opacity: 1;
+}*/
 
 ul.connected li.is-editing {
   background: white;/*#999999*/
