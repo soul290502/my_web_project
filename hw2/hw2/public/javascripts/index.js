@@ -1,18 +1,18 @@
 (function(){
 
 // 插入 <ul> 之 <li> 樣板
-var tmpl = '<li><input type="text"><span></span></li>',
+var tmpl = '<li><input type="text"><span></span><a class="del">刪除</a></li>',
     addButton = $('#add'),
     connected = $('.connected'),      // 三個 <ul>
-    placeholder = $('#placeholder'),  // 三個 <ul> 的容器
+    placeholders = $('#placeholders'),  // 三個 <ul> 的容器
     mainUl = $('.main'),              // main <ul>
     deleteUl = $('.delete'),          // delete <ul>
     doneUl = $('.done');              // done <ul>
 
 
-    loadLocal();
+    
     $('#add').on('click',function(){
-
+// alert('HI');
     	$(tmpl).addClass('is-editing').appendTo(mainUl).find('input').focus();
 	});
 
@@ -26,44 +26,69 @@ var tmpl = '<li><input type="text"><span></span></li>',
 		}	
 	});
 
+$(placeholders).on('click','.del',function(){
+	// alert($('.del').index(this));//可以顯示index
+	$(this).parents('li','span').remove();
+    save();
+	// alert($(this).index());//不行顯示
+});
 
 	// mainUl.sortable();
 
 	$('#main').sortable({
 		connectWith:'.connected',
-		start:function(){
-			$('#placeholder').addClass('is-dragging');
+		start:function(e,ui){
+
+			$('#placeholders').addClass('is-dragging');
+			// alert(ui.item.index());
+		},
+		// placeholders:{
+		// 	element:function(clone,ui){
+		// 		return $(tmpl).find('span').;
+		// 	},
+		// 	update:function(){
+		// 		return;
+		// 	}
+		helper:"clone"
+		,
+		remove:function(e,ui){
+			// ui.item.clone().addClass('is-done').appendTo('#main');
+			$(this).parents('li','span').remove();
+			// save();
+			// $(this).addClass('is-done');
 		},
 		stop:function(){
-			$('#placeholder').removeClass('is-dragging');
+			$('#placeholders').removeClass('is-dragging');
 			save();
 		}
 	});
 	$('#delete').sortable({
 		connectWith:'.connected',
 		receive:function(){
+			
 			// alert('commmmmmmm');
 		}
 	});
 	$('#done').sortable({
 		connectWith:'.connected',
 		receive:function(e,ui){
+			ui.item.clone().addClass('is-done').appendTo('#main');
 			ui.item.addClass('is-done');
 			// alert('commmmmmmm');
 		}
 	});
-	
+	loadLocal();
 
 	// mainUl.on('sort',function(e,ui){
 
-	// 	$('#placeholder').addClass('is-dragging');
+	// 	$('#placeholders').addClass('is-dragging');
 
 	// // 	// $(deleteUl).mouseenter(function(){
-	// // 	// 	$('#placeholder').addClass('is-dragging-enter');
+	// // 	// 	$('#placeholders').addClass('is-dragging-enter');
 	// // 	// 	ui.item.addClass('is-done');
 	// // 	// });
 	// // 	// $(deleteUl).mouseout(function(){
-	// // 	// 	$('#placeholder').removeClass('is-dragging-enter');
+	// // 	// 	$('#placeholders').removeClass('is-dragging-enter');
 	// // 	// });
 	// });
 	
@@ -85,7 +110,7 @@ var tmpl = '<li><input type="text"><span></span></li>',
 	// 	// 	// console.log(ui.item);
 	// 	// 	// ui.item.addClass('is-done');
 	// 	// };
-	// 	$('#placeholder').removeClass('is-dragging');
+	// 	$('#placeholders').removeClass('is-dragging');
 	// 	save();
 	// });
 

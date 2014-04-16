@@ -83,12 +83,13 @@ body, input {
   font-family: "文泉驛微米黑", "微軟正黑體", sans-serif;
 }
 
-#placeholder {
+#placeholders {
   max-width: 100%;
   height: 100%;
   overflow: hidden;
   padding-bottom: 100%;
   position: relative;
+  /*z-index: 5;*/
 }
 
 /* =============== */
@@ -130,7 +131,8 @@ ul.delete {
   border-bottom-right-radius: 10px;
   /* positioning & animation */
   left: -10px;
-  opacity: 1;
+  opacity: 0;
+  /*z-index: 0;*/
 }
 ul.delete::before {
   /* pseudo element */
@@ -150,7 +152,8 @@ ul.done {
   border-bottom-left-radius: 10px;
   /* positioning & animation */
   right: -10px;
-  opacity: 1;
+  opacity: 0;
+  /*z-index: 0;*/
 }
 ul.done::before {
   /* pseudo element */
@@ -163,6 +166,7 @@ ul.main {
   margin-left: 15%;
   padding-top: 30px;
   text-shadow: 0 -1px 1px black;
+  text-align: center;
   z-index: 1;
 }
 ul.connected li {
